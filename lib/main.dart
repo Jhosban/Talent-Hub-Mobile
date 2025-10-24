@@ -37,7 +37,7 @@ class MainApp extends StatelessWidget {
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           debugShowCheckedModeBanner: false,
-          initialRoute: authProvider.isAuthenticated ? '/home_new' : '/login',
+          initialRoute: '/home_new',
           routes: {
             '/login': (context) => const LoginScreen_new(),
             '/register_new': (context) => const RegisterScreen_new(),
