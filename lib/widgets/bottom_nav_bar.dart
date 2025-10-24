@@ -24,6 +24,9 @@ class BottomNavBar extends StatelessWidget {
           case 'Maps':
             Navigator.pushNamed(context, '/maps');
             break;
+          case 'Dashboard':
+            Navigator.pushNamed(context, '/dashboard');
+            break;
           case 'Analytics':
             Navigator.pushNamed(context, '/analytics');
             break;
@@ -68,6 +71,7 @@ class BottomNavBar extends StatelessWidget {
           _buildNavItem(context, Icons.home, 'Home', activeSection == 'Home'),
           _buildNavItem(context, Icons.car_rental, 'My Car', activeSection == 'My Car'),
           _buildNavItem(context, Icons.map, 'Maps', activeSection == 'Maps'),
+          _buildNavItem(context, Icons.dashboard, 'Dashboard', activeSection == 'Dashboard'),
           _buildNavItem(context, Icons.analytics, 'Analytics', activeSection == 'Analytics'),
         ],
       ),

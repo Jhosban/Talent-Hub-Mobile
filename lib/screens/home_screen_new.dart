@@ -155,9 +155,33 @@ class _HomeScreenState extends State<HomeScreen_new> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
+          // Navegar según el item seleccionado
+          switch (index) {
+            case 0:
+              Navigator.pushNamed(context, '/dashboard');
+              break;
+            case 1:
+              // Ya estamos en Empleados (esta pantalla)
+              setState(() {
+                _currentIndex = 1;
+              });
+              break;
+            case 2:
+              // Horarios - por ahora mostrar mensaje
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Horarios - Próximamente')),
+              );
+              break;
+            case 3:
+              Navigator.pushNamed(context, '/analytics');
+              break;
+            case 4:
+              // Configuración - por ahora mostrar mensaje
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Configuración - Próximamente')),
+              );
+              break;
+          }
         },
         selectedItemColor: const Color(0xFF4568DC),
         unselectedItemColor: Colors.grey,

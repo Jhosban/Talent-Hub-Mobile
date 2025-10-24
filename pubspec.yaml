@@ -31,6 +31,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  
+  assets:
+    - lib/assets/icon/
+    - lib/assets/dashboard/
 
 flutter_icons:
   android: true

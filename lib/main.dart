@@ -6,6 +6,11 @@ import 'providers/auth_provider.dart';
 import 'screens/home_screen_new.dart';
 import 'screens/login_screen_new.dart';
 import 'screens/register_screen_new.dart';
+import 'screens/home_screen.dart';
+import 'screens/my_car_screen.dart';
+import 'screens/map_screen.dart';
+import 'screens/dashboard_screen.dart';
+import 'screens/analytics_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,11 +37,16 @@ class MainApp extends StatelessWidget {
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           debugShowCheckedModeBanner: false,
-          initialRoute: authProvider.isAuthenticated ? '/home_new' : '/login',
+          initialRoute: '/home_new',
           routes: {
             '/login': (context) => const LoginScreen_new(),
             '/register_new': (context) => const RegisterScreen_new(),
             '/home_new': (context) => const HomeScreen_new(),
+            '/home': (context) => const HomeScreen(),
+            '/mycar': (context) => const MyCarScreen(),
+            '/maps': (context) => const MapScreen(),
+            '/dashboard': (context) => const DashboardScreen(),
+            '/analytics': (context) => const AnalyticsScreen(),
           },
         );
       },
